@@ -1,13 +1,130 @@
+:root {
+    /* Colores */
+    --darkBlue: hsl(209, 23%, 22%);
+    --veryDarkBlue: hsl(207, 26%, 17%);
+    --veryDarkBlueLight: hsl(200, 15%, 8%);
+    --darkGray: hsl(0, 0%, 52%);
+    --veryLightGray: hsl(0, 0%, 98%);
+    --white: hsl(0, 0%, 100%);
+    /* Media Queries */
+    --mobile: 375px;
+    --desktop: 1440px;
+    /* Tamaño de Fuentes */
+    --itemsPrincipal: 14px;
+    --detalle: 16px;
+    /* Fuente Principal */
+    --fuentePrincipal: 'Nunito Sans', sans-serif;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    font-family: var(--fuentePrincipal);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+.container {
+    padding: 2rem 1rem;
+    /* background-color: red; */
+}
+
+
+/* Componente Navbar */
+
+.nav {
+    align-items: center;
+    background-color: var(--white);
+    border-bottom: 2px solid #eee;
+    display: flex;
+    height: 5rem;
+    justify-content: space-between;
+    padding: 0 1rem;
+    width: 100%
+}
+
+.nav .titulo {
+    font-size: 1rem;
+    font-weight: 800;
+}
+
+.nav .subtitulo {
+    font-size: .8rem;
+    font-weight: 600;
+}
+
+.nav span {
+    margin-left: .2rem;
+}
+
+.nav button {
+    background-color: var(--white);
+    border: unset;
+    cursor: pointer;
+}
+
+.nav button:hover {
+    background-color: var(--veryDarkBlue);
+    color: var(--white);
+    transition: background-color 1500ms ease;
+}
+
+@media screen and (min-width: 1440px) {
+    .nav {
+        padding: 0 3rem;
+    }
+    .nav .titulo {
+        font-size: 1.2rem;
+    }
+    .nav .subtitulo {
+        font-size: 1rem;
+    }
+    .nav span {
+        margin-left: .3rem;
+    }
+}
+
+
+/* Componente SearchCountry */
+
+.buscador {
+    position: relative;
+}
+
+.buscador input {
+    width: 100%;
+    padding: 1.5rem;
+    /* border: unset; */
+    border-radius: 5px;
+    text-indent: 3.5rem;
+}
+
+.buscador ion-icon {
+    position: absolute;
+    bottom: 1.6rem;
+    padding: 0 2rem;
+    font-size: 1.5rem;
+    color: var(--darkGray);
+    --ionicon-stroke-width: 50px;
+}
+
+
+/* Componente CountryGrid */
+
+.card-grid {
+    width: 100%;
+    background-color: blue;
 }
