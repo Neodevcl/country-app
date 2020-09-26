@@ -124,6 +124,10 @@ code {
 
 /* Componente CountryGrid */
 
+.container-grid {
+    margin: 3rem 2rem;
+}
+
 .card-grid {
     width: 100%;
     background-color: blue;

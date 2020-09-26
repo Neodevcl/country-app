@@ -14,19 +14,19 @@ export const CountryApp = () => {
             <div className="container">
                 <SearchCountry />
 
-                <div className="container">
+                <div className="container-grid">
                     <CountryGrid />
                 </div>
             </div>
 
 
-            <ul>
+            {/*<ul>
                 {
                     regions.map( region => 
                         <li>{ region }</li>
                     )
                 }
-            </ul>
+            </ul>*/}
 
         </>
     )
