@@ -1,16 +1,21 @@
 import React from 'react';
 import { useFetchCountries } from '../hooks/useFetchCountries';
+import { CountryGridItem } from './CountryGridItem';
 
-export const CountryGrid = () => {
-
-    const { data: countries, loading } = useFetchCountries();
-
-
+export const CountryGrid = ({ region }) => {
+    
+    const { data: countries, loading } = useFetchCountries( region );
+    console.log(loading);
     return (
         <>
-            <div className="card-grid">
-                sa
-            </div>   
+            {
+                countries.map((country) => (
+                    <CountryGridItem 
+                        key={ country.name }
+                        { ...country }
+                    />
+                ))
+            }
         </>
     )
 }

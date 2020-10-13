@@ -1,33 +1,24 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { CountryGrid } from './CountryGrid';
 import { Navbar } from './Navbar'
 import { SearchCountry } from './SearchCountry';
 
-export const CountryApp = () => {
+export const CountryApp = ({ defaultRegion = 'Americas' }) => {
     
-    const regions = ['Africa', 'America', 'Asia', 'Europe', 'Oceania'];
-
+    const [region, setRegion] = useState( defaultRegion );
+    const [darkMode, setDarkMode] = useState(false)
+    
     return (
         <>
             <Navbar />
 
-            <div className="container">
-                <SearchCountry />
+            <div className={`container ${ darkMode } && dark`}>
+                <SearchCountry setRegion = { setRegion } />
 
                 <div className="container-grid">
-                    <CountryGrid />
+                    <CountryGrid region={ region }/>
                 </div>
             </div>
-
-
-            {/*<ul>
-                {
-                    regions.map( region => 
-                        <li>{ region }</li>
-                    )
-                }
-            </ul>*/}
-
         </>
     )
 }

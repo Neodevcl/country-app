@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { getCountries } from '../helpers/getCountries';
 
-export const useFetchCountries = () => {
+export const useFetchCountries = ( region ) => {
 
     const [state, setState] = useState({
         data: [],
@@ -9,7 +9,7 @@ export const useFetchCountries = () => {
     });
 
     useEffect(() => {
-        getCountries().then(
+        getCountries( region ).then(
             countries => {
                 setState({
                     data: countries,
@@ -17,7 +17,8 @@ export const useFetchCountries = () => {
                 })
             }
         );
-    })
+    }, [region])
+    console.log('Cambiooooo');
 
     return state;
 }

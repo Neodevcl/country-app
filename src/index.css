@@ -1,7 +1,7 @@
 :root {
     /* Colores */
     --darkBlue: hsl(209, 23%, 22%);
-    --veryDarkBlue: hsl(207, 26%, 17%);
+    --veryDarkBlue: hsl(209, 26%, 17%);
     --veryDarkBlueLight: hsl(200, 15%, 8%);
     --darkGray: hsl(0, 0%, 52%);
     --veryLightGray: hsl(0, 0%, 98%);
@@ -31,6 +31,7 @@ body {
     font-family: var(--fuentePrincipal);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background-color: #FAFAFA;
 }
 
 code {
@@ -100,6 +101,20 @@ code {
 
 /* Componente SearchCountry */
 
+.formulario {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.formulario .select {
+    background-color: var(--white);
+    border-radius: 5px;
+    margin-top: 3rem;
+    padding: 1.5rem;
+    max-width: 50%;
+}
+
 .buscador {
     position: relative;
 }
@@ -121,14 +136,84 @@ code {
     --ionicon-stroke-width: 50px;
 }
 
+@media screen and ( min-width: 1440px) {
+    .formulario {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .formulario .select {
+        margin-top: 0;
+        min-width: 200px;
+    }
+    .buscador input {
+        min-width: 500px;
+    }
+    .container {
+        padding: 2rem 4rem;
+    }
+    .card img {
+        width: 100% !important;
+        height: 200px;
+    }
+}
+
 
 /* Componente CountryGrid */
 
 .container-grid {
-    margin: 3rem 2rem;
+    margin: 3rem 0;
+    display: grid;
 }
 
-.card-grid {
+
+/* .card-grid {
     width: 100%;
-    background-color: blue;
+} */
+
+@media screen and (min-width: 1440px) {
+    .container-grid {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(auto-fit, minmax(350px, 1fr));
+        grid-gap: 0 3rem;
+    }
+    .card .card-text {
+        padding: 1rem !important;
+    }
+    .card .card-text p {
+        margin: .5rem;
+    }
+}
+
+.card {
+    border-radius: 5px;
+    background-color: var(--white);
+    margin-bottom: 3rem;
+    -webkit-box-shadow: 10px 11px 10px -5px rgba(204, 204, 204, 1);
+    -moz-box-shadow: 10px 11px 10px -5px rgba(204, 204, 204, 1);
+    box-shadow: 10px 11px 10px -5px rgba(204, 204, 204, 1), -10px 11px 10px -5px rgba(204, 204, 204, 1);
+}
+
+.card .card-text {
+    padding: 1rem 2rem;
+}
+
+.card .card-text .titulo {
+    color: var(--veryDarkBlueLight);
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.card .card-text p {
+    font-size: 1.2rem;
+}
+
+.card .card-text .subs {
+    color: var(--veryDarkBlueLight);
+    font-weight: 600;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 5px 5px 0 0;
+    min-height: 150px;
 }
